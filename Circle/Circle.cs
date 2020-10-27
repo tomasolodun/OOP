@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Toma_sLaboratory
+namespace Circle
 {
     public class Circle
     {
@@ -75,16 +75,27 @@ namespace Toma_sLaboratory
             return 2 * PI * Radius;//знаходимо довжину
         }
 
-        public Circle GetNewScaledCopyOfCircle(Dot external)
+        public Circle GetNewScaledCopyOfCircle(int index)
         {
-            if (external == null) //якщо змінній не присвоєно значення, повідомляємо про це користувачу
+            Dot newExternalDot = new Dot(this.ExternalDot.X * index, this.ExternalDot.Y * index); //множимо кожну координату крайньої точки на індекс
+            if (newExternalDot == null) //якщо змінній не присвоєно значення, повідомляємо про це користувачу
             {
                 throw new ArgumentException("External dot can not be null!");
             }
             else
             {
-                return new Circle(CenterDot, external); //використовуємо
+                return new Circle(CenterDot, newExternalDot); //використовуємо
             }
+        }
+        public override string ToString()
+        {
+            return $"X1 = {CenterDot.X}\n" +
+                            $"Y1 = {CenterDot.Y}\n" +
+                            $"X2 = {ExternalDot.X}\n" +
+                            $"Y2 = {ExternalDot.Y}\n" +
+                            $"Radius = {Radius}\n" +
+                            $"Lenght = {GetCircleLenght()}\n" +
+                            $"Square = {GetSquare()}";
         }
 
     }

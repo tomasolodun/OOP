@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Toma_sLaboratory
+namespace Circle
 {
     public class Dot
     {
