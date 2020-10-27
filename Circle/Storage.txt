@@ -1,0 +1,1 @@
+{"CenterDot":{"X":1,"Y":1},"ExternalDot":{"X":2,"Y":2},"Radius":10}
